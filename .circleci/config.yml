@@ -14,6 +14,8 @@ jobs:
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
+      - run:
+        command: echo '127.0.0.2 www.github.com github.com' | sudo tee -a /private/etc/hosts
       - store_artifacts:
           path: output
       - store_test_results:
@@ -21,7 +23,7 @@ jobs:
 
   adhoc:
     macos:
-      xcode: "10.2.0"
+      xcode: "12.3.0"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
@@ -38,7 +40,7 @@ jobs:
 
   beta:
     macos:
-      xcode: "10.2.0"
+      xcode: "12.3.0"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
