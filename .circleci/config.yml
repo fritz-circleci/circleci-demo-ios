@@ -7,12 +7,12 @@ jobs:
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: test
+    no_output_timeout: 15m
     shell: /bin/bash --login -o pipefail
     steps:
       - run:
           command: echo '127.0.0.2 www.github.com github.com' | sudo tee -a /private/etc/hosts
       - checkout
-          no_output_timeout: 15m
       - run: bundle install
       - run:
           name: Fastlane
