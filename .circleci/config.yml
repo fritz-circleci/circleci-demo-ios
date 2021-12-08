@@ -4,6 +4,7 @@ jobs:
     macos:
       xcode: "12.3.0"
     working_directory: /Users/distiller/project
+    timeout: 1800
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: test
