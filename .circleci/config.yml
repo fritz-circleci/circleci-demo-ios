@@ -4,6 +4,7 @@ jobs:
     macos:
       xcode: "12.3.0"
     working_directory: /Users/distiller/project
+    no_output_timeout: 15m
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: test
@@ -12,7 +13,6 @@ jobs:
       - run:
           command: echo '127.0.0.2 www.github.com github.com' | sudo tee -a /private/etc/hosts
       - checkout
-          timeout: 1800
       - run: bundle install
       - run:
           name: Fastlane
